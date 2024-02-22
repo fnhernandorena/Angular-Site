@@ -1,0 +1,8 @@
+<nav class="flex max-w-screen-lg w-full justify-around mb-10">
+    <div *ngFor="let link of links">
+    <a [routerLink]="link.path" class="border-l-2 border-r-2 flex border-gray-600 p-3 w-28 justify-around flex-col  text-white h-full items-center m-1 duration-300 hover:border-sky-300"
+    routerLinkActive="border-sky-300">  
+        {{ link.name}}
+    </a>
+</div>
+</nav>
