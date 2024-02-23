@@ -1,0 +1,14 @@
+<div class="max-w-screen-lg w-full flex flex-col items-center">
+    <div *ngFor="let image of dayImages">
+     @defer(on viewport) {
+      <img [src]="getImageUrl(image.date, image.image)" class="rounded-3xl" alt='NASA policromatic Image '>
+    } @placeholder {
+      <p>Loading image...</p>
+     } @loading {
+      <p>Loading image...</p>
+     }
+      <p class="my-4">Coordinates: Latitude: {{ image.centroid_coordinates.lat }}, Longitude: {{ image.centroid_coordinates.lon }}</p>
+      <p class="my-4 border-b-2 border-gray-500 mb-72">{{ image.caption }}</p>
+    </div>
+  </div>
+  

@@ -1,0 +1,20 @@
+<div class="max-w-screen-lg w-full flex flex-col items-center">
+    <form class="flex gap-5 mb-10" (ngSubmit)="searchPhotos()">
+      <input type="text" [(ngModel)]="searchTerm" name="searchTerm" placeholder="Write the sun number" class="h-10 block w-1/2 text-sm font-medium rounded-2xl text-gray-900 pl-2">
+      <button type="submit" class="bg-gray-700 p-2 rounded-2xl hover:bg-sky-600 duration-300">Search</button>
+    </form>
+  
+    <ul>
+      <li *ngFor="let image of photos">
+      @defer(on viewport){  <article>
+          <img [src]="image.img_src" alt="mars image" class="aspect-[11/16] w-full h-auto object-cover rounded-lg">
+         
+        </article>} @placeholder {
+         <p>.</p> 
+        } @loading {
+         <p> Loading mars image...</p>
+        } <h2 class="text-white flex justify-between items-center">{{ image.earth_date }}</h2>
+      </li>
+    </ul>
+  </div>
+  

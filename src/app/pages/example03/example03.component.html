@@ -1,0 +1,25 @@
+<div class="max-w-screen-lg w-full flex flex-col items-center">
+  <div class="mb-32" *ngIf="dayImage">
+    <h3 class="text-center bg-gray-700 p-4 rounded-2xl m-2 text-3xl">
+      {{ dayImage.title }}
+    </h3>
+    @if(mediaType === 'image') {
+    <div>
+      @defer { <img class="my-6" [src]="dayImage.url" alt="Nasa Day Image" />}
+      @placeholder { <p class="text-3xl p-4">Loading image...</p> }
+      @loading {
+      <p class="text-3xl">Loading...</p>
+      }
+    </div>
+    } @else if(mediaType === 'video') {
+    <div>
+      <a [href]="dayImage.url">The image of the day is a video, see this!</a>
+    </div>
+    } @else{
+    <div>
+      <p>Media type is not valid.</p>
+    </div>
+    }
+    <p class="text-2xl">{{ dayImage.explanation }}</p>
+  </div>
+</div>

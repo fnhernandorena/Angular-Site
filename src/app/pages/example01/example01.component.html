@@ -5,5 +5,10 @@
   >
     Get Cat Fact!
   </button>
-  <div>{{ fact }}</div>
+  @defer (on viewport){
+  <div class="text-3xl text-white">{{ fact }}</div>} @placeholder{ 
+    <p>.</p>
+  } @loading {
+    <p>Loading fact...</p>
+  }
 </div>
